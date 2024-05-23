@@ -1,13 +1,27 @@
 <template>
     <main>
-        <section>
+        <section id="secctionarticles">
             <article>
-                <img src="" alt="IMG1">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ut, iusto rerum blanditiis impedit nesciunt sint, officia facere nisi sequi voluptatem alias esse! Sunt iure neque tempore asperiores voluptatem quos.</p>
+                <img id="imgRobot" src="..\assets\modelr13k_front-pixilart.png" alt="img_Robot">
+                <p>
+                    Hunting Simulacrum es un shooter map, top-down (cámara), arcade donde el personaje irá pasando de
+                    sala en sala hasta llegar a la del boss donde tendrá que enfrentarse a él.
+                    El personaje tendrá un inventario de dos armas, puede escoger entre armas de distancia o de melee.
+                    Las de melee tienen la capacidad de eliminar proyectiles enemigos a la
+                    vez de provocar daño a los enemigos de corta distancia. El personaje apunta/defiende dependiendo de
+                    la orientación del personaje, independientemente de la posición del
+                    ratón.
+                </p>
             </article>
             <article>
-                <img src="" alt="IMG2">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi iure praesentium ipsam ab omnis repellendus culpa! Ratione nisi, quae id sequi soluta, nesciunt sint ducimus eligendi aliquam modi inventore exercitationem.</p>
+                <img id="imgLvl1" src="..\assets\Nivel1Sala1LDD.png" alt="img_lvl1-1">
+                <p>
+                    Los enemigos, habrá varios enemigos con distintas mecànicas y atributos, entre ellos hay un
+                    enemigo que irá a mele (arma a corta distancia)
+                    otro enemigo que irá a mele pero con unos atributos mejores, habrá un enemigo que ataque a distancia
+                    y por último un boss que se ubicará en la sala final del nivel.
+                    A lo largo del camino habrán obstáculos que dificulten el juego al jugador en las distintas salas.
+                </p>
             </article>
         </section>
         <section class="secctionflex">
@@ -15,7 +29,7 @@
             <div class="divdescargas">
                 <img src="../assets/logo.png" alt="logoGame">
                 <p>Hunting simulacrum (demo)</p>
-                <button>Descargar</button>
+                <button @click="downloadGame">Descargar</button>
             </div>
         </section>
         <section class="secctionflex">
@@ -34,11 +48,44 @@
 
 <script>
 export default {
-  name: 'ComponentMain',
+    name: 'ComponentMain',
+    methods: {
+        downloadGame() {
+            const fileUrl = `${window.location.origin}/favicon.ico`;
+
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.setAttribute('download', 'GameImage');
+            document.body.appendChild(link);
+            link.click();
+
+            document.body.removeChild(link);
+        },
+    },      
 }
 </script>
 
 <style scoped>
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+#imgRobot {
+    height: 400px;
+}
+
+#imgLvl1 {
+    height: 400px;
+}
+
+#secctionarticles {
+    width: 60%;
+}
+
 article {
     display: flex;
     justify-content: center;
@@ -76,19 +123,19 @@ article:nth-of-type(2) img {
 .divdescargas button {
     background-color: #FFB800;
     border: none;
-    color: black;
+    color: white;
     padding: 12px 16px;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 8px;
     margin: 0.5rem;
     font-weight: bolder;
 }
 
 .divdescargas button:hover {
-    background: rgb(255,184,0);
-    background: linear-gradient(90deg, rgba(255,184,0,1) 0%, rgba(153,138,0,1) 100%);
+    background: rgb(255, 184, 0);
+    background: linear-gradient(90deg, rgba(255, 184, 0, 1) 0%, rgba(153, 138, 0, 1) 100%);
 }
 
 .secctionflex {
@@ -104,6 +151,7 @@ article:nth-of-type(2) img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .divcreditos>p {
@@ -115,6 +163,7 @@ article:nth-of-type(2) img {
     padding: 0;
     margin: 0;
 }
+
 .divcreditos>ul>li {
     list-style-type: none;
 }

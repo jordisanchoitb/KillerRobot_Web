@@ -2,10 +2,21 @@
     <nav>
         <div id="navcontent">
             <ul>
-                <li><a href="#">Hunting Simulacrum</a></li>
-                <li><a href="#">{{ pagename }}</a></li>
-                <li><button>Iniciar session</button></li>
-                <li><button>Registrarse</button></li>
+                <li v-if="this.$route.path == '/'">
+                    <a href="#">Hunting Simulacrum</a>
+                </li>
+                <li v-else>
+                    <router-link :to="'/'">Hunting Simulacrum</router-link>
+                </li>
+                <li><router-link :to="computedRoutePage">{{ pagename }}</router-link></li>
+                <div v-if="getuser">
+                    <li><button @click="changepassword">Cambiar contraseña</button></li>
+                    <li><button @click="logout">Cerrar session</button></li>
+                </div>
+                <div v-else>
+                    <li><button @click="login">Iniciar session</button></li>
+                    <li><button @click="register">Registrarse</button></li>
+                </div>
             </ul>
         </div>
     </nav>
@@ -13,10 +24,41 @@
 
 <script>
 export default {
-  name: 'ComponentNav', 
-  props: {
-    pagename: String
-  }
+    name: 'ComponentNav',
+    props: {
+        pagename: String
+    },
+    methods: {
+        login() {
+            this.$router.push('/login');
+        },
+        register() {
+            this.$router.push('/register');
+        },
+        changepassword() {
+            this.$router.push('/changepassword');
+        },
+        logout() {
+            localStorage.removeItem('user');
+            this.$router.push('/');
+        }
+    },
+    computed: {
+        computedRoutePage() {
+            if (this.$route.path == '/') {
+                if (localStorage.getItem('user')) {
+                    return '/scoresweb';
+                } else {
+                    return '/login';
+                }
+            } else {
+                return '/'
+            }
+        },
+        getuser() {
+            return localStorage.getItem('user');
+        }
+    }
 }
 
 </script>
@@ -43,7 +85,7 @@ nav {
 ul {
     display: flex;
     list-style-type: none;
-    text-align: center;  
+    text-align: center;
     justify-content: space-between;
     padding: 0px;
     width: 100%;
@@ -74,11 +116,12 @@ ul li:nth-of-type(2)>a {
     color: black;
 }
 
-ul li:nth-of-type(3) {
-    flex-grow: 1;
+ul div {
+    flex-grow: 2;
+    display: flex;
 }
 
-ul li:nth-of-type(3)>button {
+ul div li > button {
     background-color: #FFB800;
     border: none;
     color: white;
@@ -91,33 +134,9 @@ ul li:nth-of-type(3)>button {
     height: 52px;
 }
 
-ul li:nth-of-type(3)>button:hover {
-    background: rgb(255,184,0);
-    background: linear-gradient(90deg, rgba(255,184,0,1) 0%, rgba(153,138,0,1) 100%);
+ul div li > button:hover {
+    background: rgb(255, 184, 0);
+    background: linear-gradient(90deg, rgba(255, 184, 0, 1) 0%, rgba(153, 138, 0, 1) 100%);
 }
-
-ul li:nth-of-type(4) {
-    flex-grow: 1;
-}
-
-ul li:nth-of-type(4)>button {
-    background-color: #FFB800;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 157px;
-    height: 52px;
-}
-
-ul li:nth-of-type(4)>button:hover {
-    background: rgb(255,184,0);
-    background: linear-gradient(90deg, rgba(255,184,0,1) 0%, rgba(153,138,0,1) 100%);
-}
-
-
 
 </style>

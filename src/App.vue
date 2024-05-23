@@ -1,21 +1,12 @@
 <template>
-  <ComponentHeader/>
-  <ComponentNav pagename="Tabla de puntuaciones"/>
-  <ComponentMain/>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import ComponentHeader from './components/ComponentHeader.vue';
-import ComponentNav from './components/ComponentNav.vue';
-import ComponentMain from './components/ComponentMain.vue';
-
 export default {
-  name: 'App',
-  components: {
-    ComponentHeader,
-    ComponentNav,
-    ComponentMain,
-  }
+    name: 'App',
 }
 </script>
 

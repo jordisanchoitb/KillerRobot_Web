@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'ComponentHeader',
+  name: 'ComponentHeaderSmall',
   methods: {
     vermas() {
       document.getElementById('navcontent').scrollIntoView({ behavior: 'smooth' });      
@@ -40,7 +40,7 @@ header {
   background-position: center;
   margin: 0 auto;
   width: 100%;
-  height: 66.1rem;
+  height: 10rem;
 }
 
 #content {
