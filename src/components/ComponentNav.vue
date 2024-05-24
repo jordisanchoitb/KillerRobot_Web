@@ -11,10 +11,10 @@
                 <li><router-link :to="computedRoutePage">{{ pagename }}</router-link></li>
                 <div v-if="getuser">
                     <li><button @click="changepassword">Cambiar contraseña</button></li>
-                    <li><button @click="logout">Cerrar session</button></li>
+                    <li><button @click="logout">Cerrar sesión</button></li>
                 </div>
                 <div v-else>
-                    <li><button @click="login">Iniciar session</button></li>
+                    <li><button @click="login">Iniciar sesión</button></li>
                     <li><button @click="register">Registrarse</button></li>
                 </div>
             </ul>

@@ -40,7 +40,6 @@ export default {
           this.errorpeticion = '';
           if (data.isSuccess) {
             localStorage.setItem('user', JSON.stringify(forminfo));
-            alert('Usuario registrado correctamente');
             this.$router.push("/");
           } else {
             this.errorpeticion = "Error al registrar el usuario, usuario ya existente";

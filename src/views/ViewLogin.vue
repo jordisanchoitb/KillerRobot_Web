@@ -1,6 +1,6 @@
 <template>
   <ComponentHeaderSmall />
-  <ComponentForm formname="Iniciar session" :error="errorpeticion" @forminfo="connectionApi" />
+  <ComponentForm formname="Iniciar sesión" :error="errorpeticion" @forminfo="connectionApi" />
 </template>
 
 <script>
@@ -36,7 +36,6 @@ export default {
           this.errorpeticion = '';
           if (data.isSuccess) {
             localStorage.setItem('user', JSON.stringify(forminfo));
-            alert('Usuario logeado correctamente');
             this.$router.push("/");
           } else {
             this.errorpeticion = "Login incorrecto, comprueba el usuario y la contraseña";
