@@ -3,9 +3,6 @@
     <div id="imagelogo">
       <div id="content">
         <h1 id="title">Hunting Simulacrum</h1>
-        <div id="divbutton">
-          <button @click="vermas" id="buttonvermas">Ver más</button>
-        </div>
       </div>
     </div>
   </header>
@@ -52,33 +49,32 @@ header {
 }
 
 #title {
-  margin-top: 13.5rem;
   color: black;
   font-size: 3rem;
 }
 
-#divbutton {
-  margin-top: 6rem;
+@media (max-width: 1024px) {
+  #title {
+    font-size: 2.5rem;
+  }
 }
 
-#buttonvermas {
-  background-color: #FFB800;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 24px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 182px;
-  height: 78px;
-  border-radius: 12px;
+@media (max-width: 768px) {
+  #title {
+    font-size: 2rem;
+  }
 }
 
-#buttonvermas:hover {
-  background: rgb(255,184,0);
-  background: linear-gradient(90deg, rgba(255,184,0,1) 0%, rgba(153,138,0,1) 100%);
+@media (max-width: 425px) {
+  #title {
+    font-size: 1.5rem;
+  }
 }
 
+@media (max-width: 375px) {
+  #title {
+    font-size: 1.2rem;
+  }
+}
 
 </style>

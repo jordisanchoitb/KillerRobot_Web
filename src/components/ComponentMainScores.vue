@@ -185,4 +185,108 @@ tr:hover {
     text-align: center;
     font-weight: bolder;
 }
+
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 48px;
+    }
+
+    form label {
+        font-size: 24px;
+    }
+
+    form input {
+        font-size: 16px;
+        width: 250px;
+        height: 40px;
+    }
+
+    form button {
+        font-size: 16px;
+        width: 100px;
+        height: 50px;
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    td {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 32px;
+    }
+
+    form label {
+        font-size: 20px;
+    }
+
+    form input {
+        font-size: 14px;
+        width: 200px;
+        height: 36px;
+    }
+
+    form button {
+        font-size: 14px;
+        width: 80px;
+        height: 40px;
+    }
+
+    th {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 425px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    form label {
+        font-size: 16px;
+    }
+
+    form input {
+        font-size: 12px;
+        width: 150px;
+        height: 32px;
+    }
+
+    form button {
+        font-size: 12px;
+        width: 60px;
+        height: 30px;
+    }
+
+    th {
+        font-size: 12px;
+    }
+
+    td {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    form {
+        flex-direction: column;
+    }
+
+    form label {
+        margin-bottom: 0.5rem;
+    }
+
+    form input {
+        margin-bottom: 0.5rem;
+    }
+}
 </style>

@@ -140,4 +140,32 @@ input:focus:invalid {
     text-align: center;
     font-weight: bolder;
 }
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    form label {
+        font-size: 1rem;
+    }
+
+    form input {
+        font-size: 0.8rem;
+        width: auto;
+        height: auto;
+    }
+
+    form button {
+        font-size: 1rem;
+        padding: 12px 8px;
+    }
+}
+
 </style>

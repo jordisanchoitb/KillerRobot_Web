@@ -79,6 +79,41 @@ header {
   background: rgb(255,184,0);
   background: linear-gradient(90deg, rgba(255,184,0,1) 0%, rgba(153,138,0,1) 100%);
 }
+@media (max-width: 768px) {
+  #title {
+    font-size: 2.5rem;
+    margin-top: 11rem;
+  }
+
+  #divbutton {
+    margin-top: 5rem;
+  }
+
+  #buttonvermas {
+    width: 140px;
+    height: 60px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #title {
+    font-size: 2.5rem;
+    margin-top: 11rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  #divbutton {
+    margin-top: 5rem;
+  }
+
+  #buttonvermas {
+    width: 140px;
+    height: 60px;
+    font-size: 20px;
+  }
+}
 
 
 </style>

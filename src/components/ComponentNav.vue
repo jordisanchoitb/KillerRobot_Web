@@ -108,6 +108,7 @@ ul li:nth-of-type(1)>a {
 
 ul li:nth-of-type(2) {
     flex-grow: 1;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
 }
@@ -121,7 +122,7 @@ ul div {
     display: flex;
 }
 
-ul div li > button {
+ul div li>button {
     background-color: #FFB800;
     border: none;
     color: white;
@@ -134,9 +135,49 @@ ul div li > button {
     height: 52px;
 }
 
-ul div li > button:hover {
+ul div li>button:hover {
     background: rgb(255, 184, 0);
     background: linear-gradient(90deg, rgba(255, 184, 0, 1) 0%, rgba(153, 138, 0, 1) 100%);
 }
 
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    ul li:nth-of-type(1) {
+        flex-grow: 1;
+        padding-left: 0;
+        margin-bottom: 10px;
+    }
+
+    ul li:nth-of-type(2) {
+        flex-grow: 1;
+        margin-bottom: 10px;
+    }
+
+    ul div {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+    }
+
+    ul div li>button {
+        margin: 0 0.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    ul li:nth-of-type(1) {
+        font-size: 1.2rem;
+    }
+
+    ul div li>button {
+        width: 120px;
+        height: 42px;
+    }
+}
 </style>
