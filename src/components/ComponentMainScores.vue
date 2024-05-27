@@ -20,7 +20,7 @@
                     <tr v-for="(score, index) in scores" :key="score.playerName">
                         <td>{{ index+1 }}</td>
                         <td>{{ score.playerName }}</td>
-                        <td>{{ score.completionTime }}</td>
+                        <td>{{ this.formatTime(score.completionTime) }}</td>
                         <td>{{ score.score }}</td>
                     </tr>
                 </tbody>
@@ -62,6 +62,15 @@ export default {
 
             document.body.removeChild(link);
         },
+        formatTime(time) {
+            if (!time) return '0';
+            let seconds = parseFloat(time);
+            let date = new Date(seconds * 1000);
+            let minutes = String(date.getUTCMinutes()).padStart(2, '0');
+            let secs = String(date.getUTCSeconds()).padStart(2, '0');
+            let milliseconds = String(Math.floor(date.getUTCMilliseconds() / 10)).padStart(2, '0');
+            return `${minutes}:${secs}.${milliseconds}`;
+        }
     }
 }
 </script>
