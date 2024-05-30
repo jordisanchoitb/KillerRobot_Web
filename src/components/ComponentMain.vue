@@ -51,11 +51,11 @@ export default {
     name: 'ComponentMain',
     methods: {
         downloadGame() {
-            const fileUrl = `${window.location.origin}/favicon.ico`;
+            const fileUrl = `${window.location.origin}/HuntingSimulacrum.zip`;
 
             const link = document.createElement('a');
             link.href = fileUrl;
-            link.setAttribute('download', 'GameImage');
+            link.setAttribute('download', 'HuntingSimulacrum');
             document.body.appendChild(link);
             link.click();
 
